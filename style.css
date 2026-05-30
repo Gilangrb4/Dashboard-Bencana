@@ -1,0 +1,57 @@
+/* Mengatur font global */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- SYSTEM SPINNING LOADER --- */
+/* Membuat animasi lingkaran berputar untuk indikator loading screen */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e2e8f0;
+    border-top: 5px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- PAGE MANAGEMENT TRANSITION --- */
+/* Menyembunyikan section halaman yang sedang tidak dipilih */
+.page-hidden {
+    display: none !important;
+}
+
+/* Memicu jalannya animasi halus bertahap saat halaman diaktifkan */
+.page-enter {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- LOOKER STUDIO RESPONSIVE IFRAME CONTAINER --- */
+/* Mengatur ruang tinggi wadah agar sesuai dengan tinggi kanvas asli Looker Studio (2000px) */
+.iframe-container {
+    width: 100%;
+    height: 1630px; /* Diubah menjadi statis tinggi 2050px agar Looker Studio tidak mengecilkan teks */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+}
